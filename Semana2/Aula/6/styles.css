@@ -1,0 +1,32 @@
+.quadrado-azul{
+    background-color: rgb(57, 18, 129);
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+.bola{
+    background-color: rgb(57, 18, 129);
+    height: 100px;
+    width: 100px;
+    border-radius: 70%;
+}
+
+.quadrado-vermelho{
+    background-color: red;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+.quadrado-amarelo{
+    background-color: yellow;
+    height: 50px;
+    width: 50px;
+}
+
+.barra{
+    border:  solid purple;
+    height: 20px;
+    width: 300px;
+}
