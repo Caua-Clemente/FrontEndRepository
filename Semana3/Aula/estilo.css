@@ -1,0 +1,65 @@
+.container-destinos{
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.roteiros-viagens{
+    background-color:rgb(216, 200, 252);
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    height: 390px;
+}
+
+.roteiro-destino{
+    font-weight: bolder;
+    font-size:x-large;
+    color: darkslateblue;
+    text-align: center;
+}
+
+.postal{
+    height: 130px;
+    width: 200px;
+}
+
+.roteiro-incluso{
+    font-size: larger;
+    color: darkslateblue;
+}
+
+.roteiro-preco{
+    font-weight: bolder;
+    font-size:xx-large;
+    color: darkslateblue;
+    text-align: center;
+}
+
+.roteiro-obs{
+    font-weight: bolder;
+    font-size:smaller;
+    color: darkslateblue;
+    text-align: center
+}
+
+.roteiro-parcelamento{
+    font-weight: bolder;
+    font-size:small;
+    color: darkslateblue;
+    text-align: center
+}
+
+.roteiro-comprar{
+    color: white;
+    background-color: limegreen;
+    border-color: rgba(0,0,0,0);
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    display: block;
+    margin: auto;
+}
+

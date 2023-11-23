@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./estilo.css">
+    <style>
+        div{
+            color: white;
+            font-weight: bold;
+            font-size: larger;
+        }
+        .container {
+            width: 500px;
+            display: grid;
+            grid-template-columns: 200px 200px 200px 200px 200px;
+            grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+            grid-gap: 20px;
+        }
+
+        .header{
+            background-color: green;
+            grid-area: 1 / 1 / 1 / 4;
+            padding: 30px;
+        }
+
+        .caixa1{
+            background-color: red;
+            grid-area: 2 / 1;
+            padding: 30px;
+        }
+
+        .caixa2{
+            background-color: red;
+            grid-area: 2 / 2 / 2 / 4;
+            padding: 30px;
+        }
+        
+        .conteudo{
+            background-color: violet;
+            grid-area: 3 / 1 / 7 / 4;
+            padding: 30px;
+        }
+
+        .footer{
+            background-color: darkred;
+            grid-area: 7 / 1 / 7 / 4;
+            padding: 30px;
+        }
+
+        .lateral{
+            background-color: brown;
+            grid-area: 1 / 4 / 8 / 4;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="caixa1">Caixa 1</div>
+        <div class="caixa2">Caixa 2</div>
+        <div class="conteudo">Conteúdo</div>
+        <div class="footer">Footer</div>
+        <div class="lateral">Barra lateral</div>
+
+    </div>
+</body>
+</html>
+
+<!-- 
+
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 100px;
+        }
+
+        .header{
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class = "container">
+        <div>
+            <div class = header>a</div>
+            <div class = header></div>
+
+        </div>
+    </div>
+</body>
+</html>
+</html>
+
+    !-->
