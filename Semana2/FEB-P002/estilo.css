@@ -1,80 +1,86 @@
 div{
-    color: white;
     font-weight: bold;
     font-size: larger;
+    border-style: solid;
+    border-color: black;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 100px 50px 250px 80px 200px 100px ;
+    border-style: none;
+}
+
+@media (min-width: 501px){
+    .container {
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: 100px 320px 250px 70px;
+        border-style: none;
+    }
 }
 
 .header {
     grid-area: 1 / 1 / 1 / 6;
-    margin-top: 10px;
+    background-color: rgb(175, 237, 243);
     margin-bottom: 10px;
-    border-color: green;
-    border-style: solid;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: xx-large;
+    padding-top: 20px;
 }
 
-.hmenu {
-    grid-area: 2/1 / 2/3;
-    border-color: red;
-    border-style: solid;
+.hdiv {
+    height: 40px;
+    border-style: none;
+    border-radius: 0px;
+    border-bottom: 5px solid red;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
 }
+
 .menu {
-    grid-area: 3/1 / 4/3;
-    border-color: black;
-    border-style: solid;
+    grid-area: 2/1 / 3/3;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
-.hnoticia {
-    grid-area: 2/3 / 2/5;
-    border-color: red;
-    border-style: solid;
-}
 .noticia {
-    grid-area: 3/3 / 4/5;
-    border-color: black;
-    border-style: solid;
+    grid-area: 2/3 / 3/5;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
-.hdestaque {
-    grid-area: 2/5 / 2/6;
-    border-color: red;
-    border-style: solid;
-}
 .destaque {
-    grid-area: 3/5 / 4/6;
-    border-color: black;
-    border-style: solid;
+    grid-area: 2/5 / 3/6;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
-.hservicos {
-    grid-area: 4/1 / 4/3;
-    border-color: red;
-    border-style: solid;
+.imagem {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
 }
+
 .servicos {
-    grid-area: 5/1 / 6/3;
-    border-color: black;
-    border-style: solid;
+    grid-area: 3/1 / 4/3;
+    margin-right: 5px;
 }
 
-.hresultados {
-    grid-area: 4/3 / 4/6;
-    border-color: red;
-    border-style: solid;
-}
 .resultados {
-    grid-area: 5/3 / 6/6;
-    border-color: black;
-    border-style: solid;
+    grid-area: 3/3 / 4/6;
 }
 
 .footer {
-    grid-area: 6/1 / 7/6;
-    border-color: purple;
-    border-style: solid;
+    grid-area: 4/1 / 5/6;
+    padding-top: 10px;
+    padding-left: 10px;
+    position: fixed;
+    width: 97.5%;
+    height: 50px;
+    bottom: 0;
+    background-color: rgb(175, 237, 243);
 }
+
