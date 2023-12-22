@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 let artigos;
-function getNews1() {
+function getNews() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const apiKey = 'd8787b010d992ca0554a93011a8d537e';
@@ -32,54 +32,64 @@ function getNews1() {
     });
 }
 // Utilização da função para obter as notícias
-getNews1()
+getNews()
     .then((news) => {
     console.log(news);
     artigos = news.articles;
-    const maxLength = 40;
-    let menus = [];
-    menus.push("menu-titulo-1");
-    menus.push("menu-titulo-2");
-    menus.push("menu-titulo-3");
-    let numAux = 0;
-    menus.forEach(menu => {
-        let elemento = document.getElementById(menu);
-        let titulo = artigos[numAux].title;
-        if (titulo.length > maxLength) {
-            titulo = titulo.substring(0, maxLength) + "...";
+    const menuMaxString = 40;
+    const noticiaMaxString = 40;
+    const resultadoMaxString = 55;
+    let numArtigo = 0;
+    //MENUS
+    let menus = ["menu-titulo-1", "menu-titulo-2", "menu-titulo-3"];
+    for (let i = 0; i < menus.length; i++) {
+        let elemento = document.getElementById(menus[i]);
+        let titulo = artigos[numArtigo].title;
+        if (titulo.length > menuMaxString) {
+            titulo = titulo.substring(0, menuMaxString) + "...";
         }
-        elemento.innerHTML = `<a href='${artigos[numAux++].source.url}'>${titulo}</a>`;
-    });
+        elemento.innerHTML = `<a href='${artigos[numArtigo++].url}'>${titulo}</a>`;
+    }
+    ;
+    //NOTICIAS
+    let noticias = ["noticia-titulo-1", "noticia-titulo-2"];
+    for (let i = 0; i < noticias.length; i++) {
+        let elemento = document.getElementById(noticias[i]);
+        let titulo = artigos[numArtigo].title;
+        if (titulo.length > noticiaMaxString) {
+            titulo = titulo.substring(0, noticiaMaxString) + "...";
+        }
+        let subtitulo = artigos[numArtigo].description;
+        if (subtitulo.length > noticiaMaxString) {
+            subtitulo = subtitulo.substring(0, noticiaMaxString) + "...";
+        }
+        elemento.innerHTML =
+            `
+        ${titulo}
+        <ul><li><a href='${artigos[numArtigo++].url}'>${subtitulo}</a></li></ul>
+        `;
+    }
+    ;
+    //RESULTADOS
+    let resultados = ["resultados-titulo-1", "resultados-titulo-2"];
+    for (let i = 0; i < resultados.length; i++) {
+        let elemento = document.getElementById(resultados[i]);
+        let titulo = artigos[numArtigo].title;
+        if (titulo.length > resultadoMaxString) {
+            titulo = titulo.substring(0, resultadoMaxString) + "...";
+        }
+        let subtitulo = artigos[numArtigo].description;
+        if (subtitulo.length > resultadoMaxString) {
+            subtitulo = subtitulo.substring(0, resultadoMaxString) + "...";
+        }
+        elemento.innerHTML =
+            `
+        ${titulo}
+        <ul><li><a href='${artigos[numArtigo++].url}'>${subtitulo}</a></li></ul>
+        `;
+    }
+    ;
 })
     .catch((error) => {
     console.error(error);
 });
-/*
- let menuT1 = document.getElementById("menu-titulo-1")
- let menuT2 = document.getElementById("menu-titulo-2")
- let menuT3 = document.getElementById("menu-titulo-3")
-
- if(menuT1){
-   let titulo : string = artigos[0].title;
-   if(titulo.length > maxLength){
-     titulo = titulo.substring(0, maxLength) + "...";
-   }
-   menuT1.innerHTML = `<a href='${artigos[0].source.url}'>${titulo}</a>`
- }
-
- if(menuT2){
-   let titulo : string = artigos[1].title;
-   if(titulo.length > maxLength){
-     titulo = titulo.substring(0, maxLength) + "...";
-   }
-   menuT2.innerHTML = `<a href='${artigos[1].source.url}'>${titulo}</a>`
- }
-
- if(menuT3){
-   let titulo : string = artigos[2].title;
-   if(titulo.length > maxLength){
-     titulo = titulo.substring(0, maxLength) + "...";
-   }
-   menuT3.innerHTML = `<a href='${artigos[2].source.url}'>${titulo}</a>`
- }
-})*/ 

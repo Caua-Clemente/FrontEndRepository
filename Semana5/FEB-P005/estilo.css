@@ -4,6 +4,7 @@ div{
     border-style: solid;
     border-color: black;
     font-family: 'Open Sans', sans-serif;
+    /*Adicionado posteriormente pra tirar o text overflow*/
 }
 
 .container {
