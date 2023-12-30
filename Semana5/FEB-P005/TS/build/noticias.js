@@ -18,7 +18,6 @@ function getNews() {
             const country = 'br';
             const max = '10';
             const url = `https://gnews.io/api/v4/search?q=${q}&lang=${lang}&country=${country}&max=${max}&apikey=${apiKey}`;
-            console.log(url);
             const response = yield fetch(url);
             if (!response.ok) {
                 throw new Error('Erro ao buscar notícias.');
@@ -36,9 +35,9 @@ getNews()
     .then((news) => {
     console.log(news);
     artigos = news.articles;
-    const menuMaxString = 40;
-    const noticiaMaxString = 40;
-    const resultadoMaxString = 55;
+    const menuMaxString = 30;
+    const noticiaMaxString = 30;
+    const resultadoMaxString = 40;
     let numArtigo = 0;
     //MENUS
     let menus = ["menu-titulo-1", "menu-titulo-2", "menu-titulo-3"];
@@ -66,7 +65,7 @@ getNews()
         elemento.innerHTML =
             `
         ${titulo}
-        <ul><li><a href='${artigos[numArtigo++].url}'>${subtitulo}</a></li></ul>
+        <ul><li class="subText"><a href='${artigos[numArtigo++].url}'>${subtitulo}</a></li></ul>
         `;
     }
     ;
@@ -85,7 +84,7 @@ getNews()
         elemento.innerHTML =
             `
         ${titulo}
-        <ul><li><a href='${artigos[numArtigo++].url}'>${subtitulo}</a></li></ul>
+        <ul><li class="subText"><a href='${artigos[numArtigo++].url}'>${subtitulo}</a></li></ul>
         `;
     }
     ;

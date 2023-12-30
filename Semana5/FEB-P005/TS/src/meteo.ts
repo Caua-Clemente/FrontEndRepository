@@ -1,45 +1,46 @@
-import { fetchWeatherApi } from 'openmeteo';
-	
-const params = {
-	"latitude": -14.8056,
-	"longitude": -39.2853,
-	"current": ["temperature_2m", "precipitation"],
-	"timezone": "America/Sao_Paulo",
-	"forecast_days": 1
-};
-const url = "https://api.open-meteo.com/v1/forecast";
+async function getWeatherData(city: string): Promise<any> {
+    const apiKey = '2ed53261fd6f0baf3e7286608f62c2df';
 
-async function fetchWeatherData() {
-    const responses = await fetchWeatherApi(url, params);
-    return responses;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=pt_br`;
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (response.ok) {
+            const weatherInfo = {
+                cidade: data.name,
+                temperatura: data.main.temp,
+                clima: data.weather[0].description,
+                umidade: data.main.humidity,
+            };
+
+            return weatherInfo;
+        } else {
+            throw new Error('Não foi possível obter os dados da API OpenWeatherMap');
+        }
+    } catch (error) {
+        console.error('Erro ao obter os dados:', error);
+        throw new Error('Erro ao obter os dados da API OpenWeatherMap');
+    }
 }
 
-const responses : any = fetchWeatherData();
-
-// Helper function to form time ranges
-const range = (start: number, stop: number, step: number) =>
-	Array.from({ length: (stop - start) / step }, (_, i) => start + i * step);
-
-// Process first location. Add a for-loop for multiple locations or weather models
-const response = responses[0];
-
-// Attributes for timezone and location
-const utcOffsetSeconds = response.utcOffsetSeconds();
-const timezone = response.timezone();
-const timezoneAbbreviation = response.timezoneAbbreviation();
-const latitude = response.latitude();
-const longitude = response.longitude();
-
-const current = response.current()!;
-
-// Note: The order of weather variables in the URL query and the indices below need to match!
-const weatherData = {
-	current: {
-		time: new Date((Number(current.time()) + utcOffsetSeconds) * 1000),
-		temperature2m: current.variables(0)!.value(),
-		precipitation: current.variables(1)!.value(),
-	},
-
-};
-
-// `weatherData` now contains a simple structure with arrays for datetime and weather data
+// Chamada da função
+getWeatherData('Itabuna')
+    .then((weatherData) => {
+        console.log('Informações meteorológicas:', weatherData);
+		let servicos = document.getElementById('idServicosUL');
+		if(servicos){
+			servicos.innerHTML = 
+			`
+			<li>Temperatura: ${weatherData.temperatura}º</li>
+			<li>Clima: ${weatherData.clima}</li>
+			<li>Umidade: ${weatherData.umidade}%</li>
+			`
+		}
+		
+    })
+    .catch((err) => {
+        // Lidar com erros
+        console.error(err);
+    });

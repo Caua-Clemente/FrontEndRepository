@@ -9,7 +9,6 @@ async function getNews(): Promise<any> {
     const max : string = '10';
 
     const url = `https://gnews.io/api/v4/search?q=${q}&lang=${lang}&country=${country}&max=${max}&apikey=${apiKey}`;
-    console.log(url)
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -24,16 +23,14 @@ async function getNews(): Promise<any> {
   }
 }
 
-
-
   // Utilização da função para obter as notícias
   getNews()
     .then((news) => {
       console.log(news);
       artigos = news.articles;
-      const menuMaxString : number = 40;
-      const noticiaMaxString : number = 40;
-      const resultadoMaxString : number = 55;
+      const menuMaxString : number = 30;
+      const noticiaMaxString : number = 30;
+      const resultadoMaxString : number = 40;
       
       let numArtigo : number = 0;
 
@@ -71,7 +68,7 @@ async function getNews(): Promise<any> {
         elemento.innerHTML =
         `
         ${titulo}
-        <ul><li><a href='${artigos[numArtigo++].url}'>${subtitulo}</a></li></ul>
+        <ul><li class="subText"><a href='${artigos[numArtigo++].url}'>${subtitulo}</a></li></ul>
         `
       };
 
@@ -95,7 +92,7 @@ async function getNews(): Promise<any> {
         elemento.innerHTML =
         `
         ${titulo}
-        <ul><li><a href='${artigos[numArtigo++].url}'>${subtitulo}</a></li></ul>
+        <ul><li class="subText"><a href='${artigos[numArtigo++].url}'>${subtitulo}</a></li></ul>
         `
       };
 
