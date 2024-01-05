@@ -1,0 +1,19 @@
+div{
+    background-color: white;
+    font-weight: bold;
+    font-size: larger;
+    border-style: solid;
+    border-color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+    background-color: rgb(27, 0, 178);
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: xx-large;
+    padding-top: 20px;
+    color: white;
+    border-radius: 20px;
+}
