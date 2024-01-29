@@ -1,0 +1,7 @@
+#horizontal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 600px;
+    border: solid red;
+}
