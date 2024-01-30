@@ -10,8 +10,6 @@ export class ClassesComponent{
   @Output() eventoEnviar: EventEmitter<string> = new EventEmitter<string>;
 
   enviarClasse(classe: string){
-    console.log(classe)
-
     this.eventoEnviar.emit(classe);
   }
 }

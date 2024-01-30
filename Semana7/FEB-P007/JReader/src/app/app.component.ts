@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { findIndex } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,14 @@ export class AppComponent implements OnInit {
 
   result: any;
   classes: string[] = [];
+  classeAtual: string = '';
+
   objetos: string[] = [];
+  objetoAtual: string = ''
+  
   propriedades: string[] = [];
+  propriedadeAtual: string = '';
+
   valorPropriedade: string = '';
   urlToJson = 'assets/veiculos.json';
 
@@ -22,26 +29,48 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<any>(this.urlToJson).subscribe(response => {
       this.result = response;
-      //console.log(this.result);
+      console.log(this.result);
       this.classes = Object.keys(this.result);
-      console.log(this.classes)
     });
   }
 
   selecionarClasse(classe: string): void {
-    console.log(classe)
-    //fazer objetos exibir objetos da classe escolhida
-    //deixar propriedades em branco
-    //deixar valor propriedade em branco
+    this.objetos = [];
+    this.propriedades = [];
+
+    this.classeAtual = classe;
+    this.objetoAtual = '';
+    this.propriedadeAtual = ''
+    this.valorPropriedade = '';
+
+    let listaObjetos: any[] = []
+    listaObjetos = this.result[this.classeAtual];
+
+    listaObjetos.forEach(element => {
+      this.objetos.push(element.Name)
+    });
   }
 
   selecionarObjeto(objeto: string): void {
-    //fazer propriedades exibir propriedades do objeto escolhido
-    //deixar valor propriedade em branco
+    this.propriedades = [];
+
+    this.objetoAtual = objeto;
+    this.propriedadeAtual = ''
+    this.valorPropriedade = '';
+
+    let listaPropriedades: any[] = []
+    const objetos = this.result[this.classeAtual]
+    let index = objetos.findIndex((obj: any) => obj.Name === this.objetoAtual)
+
+    listaPropriedades = this.result[this.classeAtual][index];
+    this.propriedades = Object.keys(listaPropriedades)
   }
 
   selecionarPropriedade(propriedade: string): void {
-    //fazer valor-propriedade exibir o valor da propriedade escolhida
+    this.propriedadeAtual = propriedade;
+    
+    let index = this.result[this.classeAtual].findIndex((obj: any) => obj.Name === this.objetoAtual)
+    this.valorPropriedade = this.result[this.classeAtual][index][this.propriedadeAtual]
   }
 
   comprar(): void{

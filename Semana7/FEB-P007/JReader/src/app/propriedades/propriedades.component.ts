@@ -8,4 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class PropriedadesComponent {
   @Input() valor: any[] = [];
   @Output() eventoEnviar: EventEmitter<string> = new EventEmitter<string>;
+
+  enviarPropriedade(propriedade: string){
+    this.eventoEnviar.emit(propriedade);
+  }
 }
