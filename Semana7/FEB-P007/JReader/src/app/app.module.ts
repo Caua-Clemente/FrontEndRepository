@@ -9,6 +9,10 @@ import { ClassesComponent } from './classes/classes.component';
 import { ObjetosComponent } from './objetos/objetos.component';
 import { PropriedadesComponent } from './propriedades/propriedades.component';
 import { ValorPropriedadeComponent } from './valor-propriedade/valor-propriedade.component';
+import { TitleDirectiveDirective } from './shared/directives/title-directive.directive';
+import { BodyDirectiveDirective } from './shared/directives/body-directive.directive';
+import { TextContentDirectiveDirective } from './shared/directives/text-content-directive.directive';
+import { TextTitleDirectiveDirective } from './shared/directives/text-title-directive.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { ValorPropriedadeComponent } from './valor-propriedade/valor-propriedade
     ClassesComponent,
     ObjetosComponent,
     PropriedadesComponent,
-    ValorPropriedadeComponent
+    ValorPropriedadeComponent,
+    TitleDirectiveDirective,
+    BodyDirectiveDirective,
+    TextContentDirectiveDirective,
+    TextTitleDirectiveDirective
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,9 @@
-<h1>Valor</h1>
+<div appTitleDirective>
+    <h1 appTextTitleDirective>Valor</h1>
+</div>
 
-<p> {{valor}} </p>
+<div>
+    <div appBodyDirective *ngIf="checkValor()">
+        <p appTextContentDirective>{{valor}}</p>
+    </div>
+</div>

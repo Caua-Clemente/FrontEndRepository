@@ -1,4 +1,9 @@
-<h1>Tipos</h1>
+<div appTitleDirective>
+    <h1 appTextTitleDirective>Tipos</h1>
+</div>
 
-<p *ngFor="let classe of valor" 
-(click)="enviarClasse(classe)">{{classe}}</p>
+<div>
+    <div appBodyDirective *ngFor="let classe of valor" (click)="enviarClasse(classe)">
+        <p appTextContentDirective>{{classe}}</p>
+    </div>
+</div>

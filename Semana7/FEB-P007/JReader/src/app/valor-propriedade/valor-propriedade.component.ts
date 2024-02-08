@@ -7,4 +7,11 @@ import { Component, Input} from '@angular/core';
 })
 export class ValorPropriedadeComponent {
   @Input() valor: string = '';
+
+  checkValor(){
+    if(this.valor == "")
+      return false;
+
+    return true;
+  }
 }

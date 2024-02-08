@@ -1,4 +1,9 @@
-<h1>Veículos</h1>
+<div appTitleDirective>
+    <h1 appTextTitleDirective>Veículos</h1>
+</div>
 
-<p *ngFor="let objeto of valor"
-(click)="enviarObjeto(objeto)"> {{objeto}} </p>
+<div>
+    <div appBodyDirective *ngFor="let objeto of valor" (click)="enviarObjeto(objeto)">
+        <p appTextContentDirective>{{objeto}}</p>
+    </div>
+</div>
