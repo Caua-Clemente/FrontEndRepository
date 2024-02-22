@@ -1,0 +1,28 @@
+.header{
+    background-color: rgb(73, 133, 211);
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.button{
+    background-color: rgb(185, 221, 87);
+    padding: 15px;
+    margin-left: 15px;
+    border-radius: 10px;
+
+    transition: 0.2s;
+}
+
+.button:hover{
+    background-color: rgb(187, 236, 51);
+    transform: scale(1.05);
+}
+
+.footer{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 20px;
+    font-size: larger;
+    text-align: center;
+}
