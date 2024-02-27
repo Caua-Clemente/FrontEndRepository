@@ -1,0 +1,11 @@
+<div id="main">
+  
+  <div id = "horizontal">
+    <app-classes class="componentSize" [valor]="classes" (eventoEnviar)="selecionarClasse($event)"></app-classes>
+    <app-objetos class="componentSize" [valor]="objetos" (eventoEnviar)="selecionarObjeto($event)"></app-objetos>
+    <app-propriedades class="componentSize" [valor]="propriedades" (eventoEnviar)="selecionarPropriedade($event)"></app-propriedades>
+    <app-valor-propriedade class="componentSize" [valor]="valorPropriedade" ></app-valor-propriedade>
+  </div>
+
+  <app-carrinho class="carrinho"></app-carrinho>
+</div>

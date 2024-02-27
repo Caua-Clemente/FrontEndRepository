@@ -1,8 +1,0 @@
-.container {
-    display: flex;
-    gap: 5px;
-}
-
-.container > div {
-    border: solid black;
-}
