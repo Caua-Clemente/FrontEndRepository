@@ -1,18 +1,11 @@
-<div appTitleDirective>
-    <h1 appTextTitleDirective>Comprar</h1>
-</div>
-
-<div id="scroller">
-    <div appBodyDirective>
-        <h1 appTextContentDirective> AAAAAAA</h1>
+<div id="main">
+    <div appTitleDirective id="title">
+        <h1 appTextTitleDirective>Carrinho</h1>
     </div>
-    <div appBodyDirective>
-        <h1 appTextContentDirective> AAAAAAA</h1>
+    
+    <div id="scroll">
+        <div appCarrinhoDirective class="item" *ngFor="let item of valor">
+            <p appTextContentDirective>{{item}}</p>
+        </div>
     </div>
-    <div appBodyDirective>
-        <h1 appTextContentDirective> AAAAAAA</h1>
-    </div>
-    <div appBodyDirective>
-        <h1 appTextContentDirective> AAAAAAA</h1>
-    </div>    
 </div>

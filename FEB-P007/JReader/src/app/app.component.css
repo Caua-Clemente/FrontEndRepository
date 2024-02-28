@@ -1,9 +1,10 @@
 #main{
     display: flex;
     flex-direction: column;
-    height: 700px;
-    border: solid black;
+    height: 800px;
     background-color: white;
+    
+    border: solid black;
     border-radius: 40px;
 
     align-items: center;
@@ -14,9 +15,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 100%;
-    height: 500px;
+    width: 95%;
+    height: 420px;
     margin-top: 20px;
+
+    border: solid black;
+    border-radius: 40px;
 }
 
 .componentSize{
@@ -24,7 +28,36 @@
     margin-right: 10px;
 }
 
+.botao-carrinho-disabled{
+    width: 50px;
+    height: auto;
+
+    filter: grayscale(100%) brightness(50%);
+
+    margin-top: 15px;
+    transition-duration: 0.2s;
+}
+
+.botao-carrinho-enabled{
+    width: 50px;
+    height: auto;
+
+    cursor: pointer;
+    filter: grayscale(0%) brightness(100%);
+
+    margin-top: 15px;
+    transition-duration: 0.2s;
+}
+
+.botao-carrinho-enabled:hover{
+    scale: 1.1;
+}
+
 .carrinho{
-    width: 600px;
-    margin-right: 10px;
+    width: 95%;
+    height: 200px;
+    margin-top: 15px;
+    
+    border: solid black;
+    border-radius: 40px;
 }

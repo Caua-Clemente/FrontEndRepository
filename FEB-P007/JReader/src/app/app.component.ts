@@ -10,7 +10,9 @@ import { findIndex } from 'rxjs';
 export class AppComponent implements OnInit {
   title = 'JReader';
 
+  urlToJson = 'assets/veiculos.json';
   result: any;
+
   classes: string[] = [];
   classeAtual: string = '';
 
@@ -21,7 +23,8 @@ export class AppComponent implements OnInit {
   propriedadeAtual: string = '';
 
   valorPropriedade: string = '';
-  urlToJson = 'assets/veiculos.json';
+  
+  listaCarrinho: string[] = [];
 
   constructor(public http: HttpClient) {
   }
@@ -29,7 +32,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<any>(this.urlToJson).subscribe(response => {
       this.result = response;
-      console.log(this.result);
       this.classes = Object.keys(this.result);
     });
   }
@@ -74,14 +76,9 @@ export class AppComponent implements OnInit {
   }
 
   comprar(): void{
-    //verificar se algum objeto foi selecionado
-    //se sim, incluir o objeto na lista do carrinho de compras
-    //se não, notificar. talvez mudar a abordagem pra isso seja melhor
-  }
+    if(this.objetoAtual=="")
+      return;
 
-  confirmar(): void{
-    //talvez seja necessário passar a lista como parâmetro
-    //confirma a compra, adiciona ao arquivo json de armazenamento
-    // e zera o carrinho
+    this.listaCarrinho.push(this.objetoAtual);
   }
 }

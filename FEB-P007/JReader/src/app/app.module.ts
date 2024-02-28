@@ -13,6 +13,7 @@ import { TitleDirectiveDirective } from './shared/directives/title-directive.dir
 import { BodyDirectiveDirective } from './shared/directives/body-directive.directive';
 import { TextContentDirectiveDirective } from './shared/directives/text-content-directive.directive';
 import { TextTitleDirectiveDirective } from './shared/directives/text-title-directive.directive';
+import { CarrinhoDirectiveDirective } from './shared/directives/carrinho-directive.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TextTitleDirectiveDirective } from './shared/directives/text-title-dire
     TitleDirectiveDirective,
     BodyDirectiveDirective,
     TextContentDirectiveDirective,
-    TextTitleDirectiveDirective
+    TextTitleDirectiveDirective,
+    CarrinhoDirectiveDirective,
   ],
   imports: [
     BrowserModule,

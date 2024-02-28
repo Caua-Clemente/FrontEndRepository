@@ -7,5 +7,10 @@
     <app-valor-propriedade class="componentSize" [valor]="valorPropriedade" ></app-valor-propriedade>
   </div>
 
-  <app-carrinho class="carrinho"></app-carrinho>
+  <img [ngClass]="{
+    'botao-carrinho-enabled': objetoAtual!=='', 
+    'botao-carrinho-disabled': objetoAtual===''}" 
+  src="../assets/botao_carrinho.jpg" alt="botao_para_carrinho" (click)="comprar()">
+
+  <app-carrinho class="carrinho" [valor]="listaCarrinho"></app-carrinho>
 </div>
