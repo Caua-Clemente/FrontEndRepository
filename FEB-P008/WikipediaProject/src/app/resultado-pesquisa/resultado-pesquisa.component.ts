@@ -13,25 +13,23 @@ export class ResultadoPesquisaComponent {
   resultList: any[] = [];
 
   ngOnInit(): void{
-    //this.usePaises();
-    this.useSearch();
+    this.search();
   }
 
-  async usePaises(): Promise<void> {
-    this.wikipediaService.getPaises()
-    .then((paises) => {
-      this.resultList = paises;
-      console.log(this.resultList);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-  }
-
-  async useSearch(): Promise<void> {
-    this.wikipediaService.search("Brasil")
+  async search(): Promise<void> {
+    this.wikipediaService.wikiOpenSearch("Brazil")
     .then((resultados) =>{
 
+      this.resultList = [];
+      resultados[1].forEach((element: any) => {
+        console.log(element)
+        this.wikipediaService.wikiQuery(element).then((conteudo) =>{
+         const key = Object.keys(conteudo.query.pages)
+         //console.log(key[0]); 
+         console.log(conteudo.query.pages[key[0]].extract)
+         this.resultList.push(conteudo.query.pages[key[0]].extract)
+        });
+      });
     })
     .catch((error) => {
       console.error(error);
