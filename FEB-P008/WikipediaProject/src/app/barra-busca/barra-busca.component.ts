@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-barra-busca',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './barra-busca.component.css'
 })
 export class BarraBuscaComponent {
+  @Output() eventoEnviar: EventEmitter<string> = new EventEmitter<string>;
+  textoPesquisa : string = '';
 
+  enviarTextoPesquisa(){
+    this.eventoEnviar.emit(this.textoPesquisa);
+  }
 }
