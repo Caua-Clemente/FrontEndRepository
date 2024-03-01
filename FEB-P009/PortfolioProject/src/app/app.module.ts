@@ -11,6 +11,14 @@ import { UescPageComponent } from './components/uesc-page/uesc-page.component';
 import { JreaderPageComponent } from './components/jreader-page/jreader-page.component';
 import { WikipediaPageComponent } from './components/wikipedia-page/wikipedia-page.component';
 
+import { DestaqueComponent } from './components/uesc-page/destaque/destaque.component';
+import { FooterComponent } from './components/uesc-page/footer/footer.component';
+import { HeaderComponent } from './components/uesc-page/header/header.component';
+import { MenuComponent } from './components/uesc-page/menu/menu.component';
+import { NoticiasComponent } from './components/uesc-page/noticias/noticias.component';
+import { ResultadosComponent } from './components/uesc-page/resultados/resultados.component';
+import { ServicosComponent } from './components/uesc-page/servicos/servicos.component';
+
 const routes: Routes = [
   { path: 'uescPage', component: UescPageComponent },
   { path: 'jreaderPage', component: JreaderPageComponent },
@@ -22,7 +30,14 @@ const routes: Routes = [
     AppComponent,
     UescPageComponent,
     JreaderPageComponent,
-    WikipediaPageComponent
+    WikipediaPageComponent,
+    DestaqueComponent,
+    FooterComponent,
+    HeaderComponent,
+    MenuComponent,
+    NoticiasComponent,
+    ResultadosComponent,
+    ServicosComponent
   ],
   imports: [
     BrowserModule,
