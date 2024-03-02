@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
-import { WikipediaPageComponent } from './components/wikipedia-page/wikipedia-page.component';
+import { MatButtonModule } from '@angular/material/button';
 
 import { UescPageComponent } from './components/uesc-page/uesc-page.component';
 import { DestaqueComponent } from './components/uesc-page/destaque/destaque.component';
@@ -24,12 +23,13 @@ import { ClassesComponent } from './components/jreader-page/classes/classes.comp
 import { ObjetosComponent } from './components/jreader-page/objetos/objetos.component';
 import { PropriedadesComponent } from './components/jreader-page/propriedades/propriedades.component';
 import { ValorPropriedadeComponent } from './components/jreader-page/valor-propriedade/valor-propriedade.component';
-
 import { BodyDirectiveDirective } from './shared/directives/body-directive.directive';
 import { CarrinhoDirectiveDirective } from './shared/directives/carrinho-directive.directive';
 import { TextContentDirectiveDirective } from './shared/directives/text-content-directive.directive';
 import { TextTitleDirectiveDirective } from './shared/directives/text-title-directive.directive';
 import { TitleDirectiveDirective } from './shared/directives/title-directive.directive';
+
+import { WikipediaPageComponent } from './components/wikipedia-page/wikipedia-page.component';
 import { NegritoPipe } from './shared/negrito.pipe';
 import { BarraBuscaComponent } from './components/wikipedia-page/barra-busca/barra-busca.component';
 import { ResultadoPesquisaComponent } from './components/wikipedia-page/resultado-pesquisa/resultado-pesquisa.component';
@@ -72,7 +72,8 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

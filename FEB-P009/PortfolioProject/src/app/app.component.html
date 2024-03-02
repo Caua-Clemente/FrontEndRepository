@@ -1,26 +1,21 @@
-<!-- -->
-<a routerLink="/uescPage" routerLinkActive="ativo" >uescPage</a> <br>
-<a routerLink="/jreaderPage" routerLinkActive="ativo" >jreaderPage</a> <br>
-<a routerLink="/wikipediaPage" routerLinkActive="ativo" >wikipediaPage</a> <br>
-<a routerLink="/" routerLinkActive="ativo" > Nada </a> <br>
+<div id="main-header">
+    <button mat-raised-button color="primary" (click)="paraUesc()">
+        Página UESC
+    </button>
 
-<br><br>
-<br><br>
+    <button mat-raised-button color="primary" (click)="paraJreader()">
+        Página JReader
+    </button>
+
+    <button mat-raised-button color="primary" (click)="paraWikipedia()">
+        Página Wikipedia
+    </button>
+
+    <button mat-raised-button color="primary" (click)="fechar()">
+        Fechar
+    </button>
+</div>
+
+<br><br> 
 
 <router-outlet></router-outlet>
-
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-
-
-<!--
-<app-jreader-page></app-jreader-page>
-<app-uesc-page></app-uesc-page>
--->
-
-
-

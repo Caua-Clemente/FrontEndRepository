@@ -17,4 +17,16 @@ export class AppComponent {
   paraUesc() {
     this.rotas.navigate(['uescPage']);
   }
+
+  paraJreader() {
+    this.rotas.navigate(['jreaderPage']);
+  }
+
+  paraWikipedia() {
+    this.rotas.navigate(['wikipediaPage']);
+  }
+
+  fechar() {
+    this.rotas.navigate(['']);
+  }
 }

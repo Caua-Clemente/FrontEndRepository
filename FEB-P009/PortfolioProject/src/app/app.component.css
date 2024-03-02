@@ -1,0 +1,14 @@
+#main-header{
+    display: flex;
+    font-size: larger;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button{
+    width: 20%;
+    height: 60px;
+    margin-right: 20px;
+
+    font-size:x-large;
+}
