@@ -1,0 +1,16 @@
+<div id="main">
+  
+  <div id = "horizontal">
+    <app-classes class="componentSize" ></app-classes>
+    <app-objetos class="componentSize" ></app-objetos>
+    <app-propriedades class="componentSize" ></app-propriedades>
+    <app-valor-propriedade class="componentSize" ></app-valor-propriedade>
+  </div>
+
+  <img [ngClass]="{
+    'botao-carrinho-enabled': objetoAtual!=='', 
+    'botao-carrinho-disabled': objetoAtual===''}" 
+  src="../assets/botao_carrinho.jpg" alt="botao_para_carrinho" (click)="comprar()">
+
+  <app-carrinho class="carrinho" ></app-carrinho>
+</div>

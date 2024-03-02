@@ -1,0 +1,9 @@
+<div appTitleDirective>
+    <h1 appTextTitleDirective>Propriedades</h1>
+</div>
+
+<div>
+    <div appBodyDirective *ngFor="let propriedade of valor" (click)="enviarPropriedade(propriedade)">
+        <p appTextContentDirective>{{propriedade}}</p>
+    </div>
+</div>
