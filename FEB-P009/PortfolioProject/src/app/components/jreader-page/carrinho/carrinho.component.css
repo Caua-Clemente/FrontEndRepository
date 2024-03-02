@@ -1,0 +1,22 @@
+#main{
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#scroll{
+    display: flex;
+    overflow-x: auto;
+
+    margin-top: 10px;
+    height: 100px;
+    width: 90%;
+
+    padding-top: 20px;
+}
+
+.item{
+    margin-right: 30px;
+    flex: 0 0 auto;
+}
