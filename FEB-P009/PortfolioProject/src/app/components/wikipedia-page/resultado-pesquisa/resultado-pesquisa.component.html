@@ -1,0 +1,13 @@
+<div *ngFor="let item of resultList">
+    <div [innerHTML]="item.texto"> </div>
+    
+<!--
+A ideia era
+    <div {{ [innerHTML]="item.texto" | negrito:{{pesquisa}} }}> </div>
+
+Mas pelo fato de eu inserir o conteúdo diretamente pela html, o pipe não funciona
+-->
+
+    <a href=item.link> {{item.link}} </a>
+    <br> <br> <br> <br>
+</div>

@@ -30,6 +30,9 @@ import { CarrinhoDirectiveDirective } from './shared/directives/carrinho-directi
 import { TextContentDirectiveDirective } from './shared/directives/text-content-directive.directive';
 import { TextTitleDirectiveDirective } from './shared/directives/text-title-directive.directive';
 import { TitleDirectiveDirective } from './shared/directives/title-directive.directive';
+import { NegritoPipe } from './shared/negrito.pipe';
+import { BarraBuscaComponent } from './components/wikipedia-page/barra-busca/barra-busca.component';
+import { ResultadoPesquisaComponent } from './components/wikipedia-page/resultado-pesquisa/resultado-pesquisa.component';
 
 const routes: Routes = [
   { path: 'uescPage', component: UescPageComponent },
@@ -59,7 +62,10 @@ const routes: Routes = [
     CarrinhoDirectiveDirective,
     TextContentDirectiveDirective,
     TextTitleDirectiveDirective,
-    TitleDirectiveDirective
+    TitleDirectiveDirective,
+    NegritoPipe,
+    BarraBuscaComponent,
+    ResultadoPesquisaComponent
   ],
   imports: [
     BrowserModule,
