@@ -38,9 +38,8 @@ export class ComunicacaoService {
     this.http.get<any>(this.urlToJson).subscribe(response => {
       this.result = response;
       this.classes = Object.keys(this.result);
+      this.classesSubject.next(this.classes);
     });
-
-    console.log("socorro")
   }
 
   selecionarClasse(classe: string): void {
@@ -84,7 +83,7 @@ export class ComunicacaoService {
     listaPropriedades = this.result[this.classeAtual][index];
     this.propriedades = Object.keys(listaPropriedades)
     
-    this.valorPropriedadeSubject.next(this.valorPropriedade)
+    this.propriedadesSubject.next(this.propriedades)
   }
 
   selecionarPropriedade(propriedade: string): void {
@@ -103,9 +102,5 @@ export class ComunicacaoService {
     this.listaCarrinho.push(this.objetoAtual);
 
     this.listaCarrinhoSubject.next(this.listaCarrinho);
-  }
-
-  help(){
-    console.log("help")
   }
 }
