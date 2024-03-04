@@ -1,0 +1,17 @@
+.formu{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formu mat-form-field {
+    display: block;
+    width: 30%; /* Adjust this to change the width of the form */
+    margin: 0 auto; /* This will center the form */
+    padding: 20px; /* This adds some space inside the border */
+  }
+
+button{
+    margin: 0 auto; /* This will center the form */
+
+}

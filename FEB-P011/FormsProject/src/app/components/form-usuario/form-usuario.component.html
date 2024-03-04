@@ -1,0 +1,56 @@
+
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="formu">
+
+    <mat-form-field>
+        <mat-label>Nome do Usuário</mat-label>
+        <input matInput formControlName="nomeUsuario">
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput formControlName="senha">
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Nome Completo</mat-label>
+        <input matInput formControlName="nomeCompleto">
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Telefone xx-xxxxx-xxxx </mat-label>
+        <input matInput formControlName="telefone">
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Endereço</mat-label>
+        <input matInput formControlName="endereco">
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Data de Nascimento dd-mm-aaaa</mat-label>
+        <input matInput formControlName="dataNascimento">
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Gênero</mat-label>
+        <mat-select formControlName="genero">
+            <mat-option *ngFor="let item of generos" value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+    </mat-form-field> 
+
+    <mat-form-field>
+        <mat-label>Profissão</mat-label>
+        <mat-select formControlName="profissao">
+            <mat-option *ngFor="let item of profissoes" value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+    </mat-form-field> 
+
+    <button mat-raised-button type="submit" class="botao">Submit</button>
+
+</form>
+
