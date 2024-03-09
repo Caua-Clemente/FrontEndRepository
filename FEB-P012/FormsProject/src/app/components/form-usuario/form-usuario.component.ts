@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { LogServiceService } from '../../services/log-service.service';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-form-usuario',
   templateUrl: './form-usuario.component.html',
@@ -14,7 +15,7 @@ export class FormUsuarioComponent {
   profissoes: string[] = ["", "Cientista", "Garçom", "Policial", "Advogado", "Vendedor", "Autômono", "Outro"];
   logAlteracoes: string[] = [];
 
-  constructor() { 
+  constructor(public http: HttpClient, private logServiceService:LogServiceService) {
     this.formulario = new FormGroup({
       'nomeUsuario': new FormControl(null,
       [ 
@@ -80,7 +81,7 @@ export class FormUsuarioComponent {
   onSubmit(){
     if (this.formulario.valid) {
       console.log('Formulário válido:', this.formulario.value);
-      console.log('Log de valores e status: ', this.logAlteracoes);
+      this.logServiceService.showLog(this.logAlteracoes)
       this.logAlteracoes = [];
     } else {
       console.log('Formulário inválido');
