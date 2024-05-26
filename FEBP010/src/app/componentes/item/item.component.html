@@ -1,0 +1,19 @@
+<div>
+    <p>{{itemRecebido.id}}</p>
+    <p>{{itemRecebido.name}}</p>
+    <p>{{itemRecebido.price}}</p>
+    <p>{{itemRecebido.quantity}}</p>
+    <p>{{itemRecebido.marcado}}</p>
+</div>
+
+<div (click)="atualizarQuantidade(1)">
+    AUMENTA
+</div>
+
+<div (click)="atualizarQuantidade(-1)">
+    DIMINUI
+</div>
+
+<div (click)="atualizarMarcacao()">
+    MARCAÇÃO
+</div>
