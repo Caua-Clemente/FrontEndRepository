@@ -1,3 +1,31 @@
 .borda{
     border: 5px solid black
 }
+
+.footer {
+    width: 100%;
+    border-top: 5px solid grey;
+    background-color: white;
+    text-align: left;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.header {
+    width: 100%;
+    border-top: 5px solid grey;
+    border-bottom: 5px solid grey;
+    background-color: white;
+    text-align: left;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+h3{
+    color: rgb(42, 214, 214);
+}

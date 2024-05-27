@@ -1,4 +1,7 @@
-<app-header></app-header>
+<div class="header">
+  <h1>Carrinho de compras</h1>
+  <h3 (click)="desmarcarTodos()" >Desmarcar todos os itens</h3>
+</div>
 
 <div *ngFor="let item of listaItens()">
   
@@ -13,6 +16,7 @@
     <br><br><br>
 </div>
 
-<div>
-  {{subTotal()}}
+<div class="footer">
+  Quantidade de itens: {{subQuantidade()}} <br>
+  Subtotal: R${{subTotal()}} <br>
 </div>

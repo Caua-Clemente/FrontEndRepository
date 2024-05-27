@@ -1,5 +1,47 @@
-div{
-    border-radius: 5px;
-    border-style: black solid;
-    font-size: larger;
+img{
+    width: 150px;
+    height: 150px;
 }
+
+.corpo{
+    display: flex;
+}
+
+.info{
+    margin-left: 20px;
+}
+
+.actions{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.marcacao{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.square {
+    width: 100px;
+    height: 40px;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bolder;
+  }
+  
+  .green {
+    background-color: rgb(43, 247, 43);
+  }
+  
+  .red {
+    background-color: rgb(255, 48, 48);
+  }
